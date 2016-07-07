@@ -8,6 +8,9 @@ gem 'binding_of_caller', group: :development
 # Here is the Devise gem
 gem 'devise'
 
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha3'
+
 # Here are a few gems for making javascript charts
 gem "chartkick"
 gem 'active_median'
