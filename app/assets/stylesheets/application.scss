@@ -17,14 +17,17 @@
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 
 body {
-  background-color: white;
+  background-color: black;
+  background-image: image-url("thegrid.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 400px;
 }
 
 #container {
-  width: 500px;
+  width: 100%;
   margin: auto;
 }
-/*neeeeoooon*/
 
 p {
   text-align: center;
@@ -74,11 +77,11 @@ a {
   }
 }
 
-@media (max-width: 650px) {
+/*@media (max-width: 650px) {
   #container {
     width: 100%;
   }
   p {
     font-size: 3.5em;
   }
-}
+}*/
