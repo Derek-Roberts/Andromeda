@@ -1,5 +1,17 @@
 source 'https://rubygems.org'
 
+# here are some gems for development
+gem 'quiet_assets', group: :development
+gem 'better_errors', group: :development
+gem 'binding_of_caller', group: :development
+
+# Here is the Devise gem
+gem 'devise'
+
+# Here are a few gems for making javascript charts
+gem "chartkick"
+gem 'active_median'
+gem 'groupdate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
