@@ -21,7 +21,8 @@ body {
   background-image: image-url("thegrid.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0 400px;
+  background-position: 0 -40%;
+  font-family: Roboto;
 }
 
 #container {
@@ -30,8 +31,9 @@ body {
 }
 
 p {
-  text-align: center;
-  font-size: 7em;
+  color: white;
+  text-align: left;
+  font-size: 2em;
   margin: 20px 0 20px 0;
 }
 
@@ -42,7 +44,10 @@ a {
   transition: all 0.5s;
 }
 
-#main-title p {
+#main-title {
+  text-align: center;
+  font-size: 7em;
+  margin: 20px 0 20px 0;
   color: #fff;
   font-family: Monoton;
   -webkit-animation: neon 1.5s ease-in-out infinite alternate;
