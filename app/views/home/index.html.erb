@@ -1,13 +1,10 @@
 <div id="container">
-
-    <% for user in @users %>
-      <div class="user">
-        <p>
-          <strong><%=h user.username %></strong>
-          <%= link_to "Add Friend", friend_path(:friend_id => user), :method => :post %>
-          <div class="clear"></div>
-        </p>
-      </div>
-    <% end %>
+<h3>Current Friends</h3>
+<% current_user.friendships.each do |friend| %>
+  <% if !friend.new_record? %>
+    <%= User.find(friend.friend_id).username %><br>
+  <% end %>
+<% end %>
+<hr>
 
 </div>
