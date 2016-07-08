@@ -1,17 +1,13 @@
 <div id="container">
 
-    <div id="main-title">
-      Andromeda
-    </div>
-
-    <div id="user-list">
-      <% @users.each do |user| %>
-        <%= user.username %><br>
-      <% end %>
-    </div>
-    <div id="friend-list">
-      <% @friends.each do |friend| %>
-        <%= friend.username %> <%= friend.first_name %><br>
-      <% end %>
+    <% for user in @users %>
+      <div class="user">
+        <p>
+          <strong><%=h user.username %></strong>
+          <%= link_to "Add Friend", friend_path(:friend_id => user), :method => :post %>
+          <div class="clear"></div>
+        </p>
+      </div>
+    <% end %>
 
 </div>
