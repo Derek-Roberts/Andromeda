@@ -35,8 +35,6 @@ body {
 }
 
 .friendlist {
-  width: 100%;
-  margin: auto;
   background:rgba(0,0,0,0.5);
   overflow: hidden;
 }
@@ -50,6 +48,16 @@ a {
 
 img {
   border-radius: 50%;  
+}
+
+h3 {
+  text-align: center;
+  font-size: 4em;
+  color: #fff;
+  font-family: Roboto;
+  -webkit-animation: neon 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon 1.5s ease-in-out infinite alternate;
+  animation: neon 1.5s ease-in-out infinite alternate;
 }
 
 #main-title {

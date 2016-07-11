@@ -1,24 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Articles</h1>
-
 <div class="friendlist">
   <h3>Current Friends</h3>
   <% @friends.each do |friend| %>
     <% if !friend.new_record? %>
-      <%= link_to friend.username, user_path(friend.id) %>
-      <%= image_tag(friend.avatar, size: "50x50", alt: friend.avatar) %><br>
+      <div class="friend">
+        <%= image_tag(friend.avatar, size: "40x40", alt: friend.avatar) %>
+        <h4><%= link_to friend.username, user_path(friend.id) %></h4>
+      </div>
     <% end %>
   <% end %>
 </div>
+<br><br>
+<h3>Listing Articles</h3>
 <div class="row masonry-container">
   <div class="box col-md-2 article">
-    <h3><%= link_to "New Article", new_article_path %></h3>
+    <h4><%= link_to "New Article", new_article_path %></h4>
     Click the title above to visit the article creation page.
   </div>
 <% @articles.each do |article| %>
-  <div class="box col-md-4 article">
-        <h3><%= link_to article.title, article %></h3>
+  <div class="box col-md-<%= rand(3..5) %> article">
+        <h4><%= link_to article.title, article %><small> - <%= User.find(article.user_id).username  %></small></h4>
         <%= article.content %>
         <% if article.user_id == current_user.id %>
           <%= link_to 'Edit', edit_article_path(article) %>

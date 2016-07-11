@@ -12,16 +12,16 @@
   <% end %>
   <p>Please submit a URL to an article you'd like to summarize.  By default the article's title will be picked but if you would like to enter a custom one go right ahead!</p><br>
 
+<div class="input-group">
   <div class="field">
-    <%= f.label :title, "Custom Title: " %><br>
-    <%= f.text_area :title %>
+    <%= f.text_area :title, placeholder: "Custom Title", class: "input-group-addon" %>
   </div>
+</div>
   <div class="field">
     <%= f.label :URL %><br>
     <%= f.text_area :URL %>
   </div>
   <div class="field">
-    <%= f.label :private %><br>
     <%= f.radio_button :private, '0', :checked => true %> <%= f.label :private, "Public" %>
     <%= f.radio_button :private, '1' %> <%= f.label :private, "Private" %>
   </div>
