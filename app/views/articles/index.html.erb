@@ -19,20 +19,6 @@
   <p><%= @summary %></p>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Char count</th>
-      <th>Url</th>
-      <th>Private</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @articles.each do |article| %>
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -41,14 +27,12 @@
         <div class="panel-body">
           <%= article.content %>
         </div>
-        <td><%= article.char_count %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= article.char_count %>
+        <%= link_to 'Show', article %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 
