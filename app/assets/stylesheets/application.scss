@@ -17,6 +17,7 @@
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 
 body {
+  color: white;
   background-color: black;
   background-image: image-url("thegrid.jpg");
   background-size: cover;
@@ -28,13 +29,15 @@ body {
 #container {
   width: 100%;
   margin: auto;
+  background:rgba(0,0,0,0.5);
+  overflow: hidden;
 }
 
-p {
-  color: white;
-  text-align: left;
-  font-size: 2em;
-  margin: 20px 0 20px 0;
+.friendlist {
+  width: 100%;
+  margin: auto;
+  background:rgba(0,0,0,0.5);
+  overflow: hidden;
 }
 
 a {
