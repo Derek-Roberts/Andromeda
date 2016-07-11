@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "masonry/fluid";
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 
 body {

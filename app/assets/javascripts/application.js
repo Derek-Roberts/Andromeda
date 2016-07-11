@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require bootstrap
+//= require bootstrap-sprockets
+//= require masonry/jquery.masonry
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-@import "bootstrap";

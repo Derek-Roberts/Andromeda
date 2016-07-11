@@ -14,8 +14,9 @@
 
 <%= link_to "New Article", new_article_path %>
 
+<div class="row masonry-container">
 <% @articles.each do |article| %>
-  <div class="article">
+  <div class="box col-md-4">
         <h3><%= article.title %></h3>
         <%= article.content %>
         <%= link_to 'Show', article %>
@@ -23,6 +24,7 @@
         <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>
+</div>
 
 <br>
 
