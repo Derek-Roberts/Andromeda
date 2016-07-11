@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'httparty'
+
 # here are some gems for development
 gem 'quiet_assets', group: :development
 gem 'better_errors', group: :development
