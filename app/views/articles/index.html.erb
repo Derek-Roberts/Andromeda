@@ -11,21 +11,19 @@
     <% end %>
   <% end %>
 </div>
-
-<%= link_to "New Article", new_article_path %>
-
 <div class="row masonry-container">
+  <div class="box col-md-2 article">
+    <h3><%= link_to "New Article", new_article_path %></h3>
+    Click the title above to visit the article creation page.
+  </div>
 <% @articles.each do |article| %>
-  <div class="box col-md-4">
-        <h3><%= article.title %></h3>
+  <div class="box col-md-4 article">
+        <h3><%= link_to article.title, article %></h3>
         <%= article.content %>
-        <%= link_to 'Show', article %>
-        <%= link_to 'Edit', edit_article_path(article) %>
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if article.user_id == current_user.id %>
+          <%= link_to 'Edit', edit_article_path(article) %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
   </div>
 <% end %>
 </div>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>

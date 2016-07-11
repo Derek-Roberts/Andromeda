@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'httparty'
 gem 'masonry-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'seed_dump'
 
 # here are some gems for development
 gem 'quiet_assets', group: :development

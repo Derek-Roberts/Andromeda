@@ -1,34 +1,19 @@
-# WARNING: these seeds assume you have edited the devise config to allow for single letter passwords
-#
-# 
-# uses this dictionary to generate random tags
-#load "#{Rails.root}/db/words.rb"
-=begin
-def gen_tag
-  str = String.new
-  len = rand(4) + 1
-  for i in 1..len
-    str += $words.sample + " "
-  end
-  return str
-end
-=end
-users = User.create(
-  [
-    { email: 'a@a.com', username: 'ardvark1', first_name: "Adam", last_name: "Aardvark", date_of_birth: DateTime.now, is_male: true, avatar: "default.png", password: "a", password_confirmation: "a"},
-    { email: 'b@b.com', username: 'bear1', first_name: "Barbra", last_name: "Bear", date_of_birth: DateTime.now, is_male: false, avatar: "default.png", password: "b", password_confirmation: "b"},
-    { email: 'c@c.com', username: 'cat1', first_name: "Catherine", last_name: "Cat", date_of_birth: DateTime.now, is_male: false, avatar: "default.png", password: "c", password_confirmation: "c"},
-    { email: 'd@d.com', username: 'dog1', first_name: "Dylan", last_name: "Dog", date_of_birth: DateTime.now, is_male: true, avatar: "default.png", password: "d", password_confirmation: "d"},
-    { email: 'e@e.com', username: 'elephant1', first_name: "Elena", last_name: "Elephant", date_of_birth: DateTime.now, is_male: false, avatar: "default.png", password: "e", password_confirmation: "e"},
-    { email: 'f@f.com', username: 'fox1', first_name: "Frank", last_name: "Fox", date_of_birth: DateTime.now, is_male: true, avatar: "default.png", password: "f", password_confirmation: "f"}
-  ]
-)
-
-friends = Friendship.create(
-  [
-    {user_id: 1, friend_id: 2},
-    {user_id: 1, friend_id: 3},
-    {user_id: 1, friend_id: 4}
-  ]
-)
- 
+User.create!([
+  {email: "a@a.com", encrypted_password: "$2a$11$49kCSiiOBlAzcfltOIGM3Ok716.uq061pYqJO/VftwR.32CQgSSoy", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2016-07-11 13:24:39", last_sign_in_at: "2016-07-11 06:34:52", current_sign_in_ip: "73.235.19.253", last_sign_in_ip: "73.235.19.253", username: "ardvark1", first_name: "Adam", last_name: "Aardvark", date_of_birth: "2016-07-11 01:14:39", is_male: true, avatar: "default.png"},
+  {email: "b@b.com", encrypted_password: "$2a$11$82ypAaS3Mk4Exi5qc1OeUutu0qTxsLt1Dc8CZ0.hySDeAWK/ld.8e", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-07-11 06:34:43", last_sign_in_at: "2016-07-11 06:34:43", current_sign_in_ip: "73.235.19.253", last_sign_in_ip: "73.235.19.253", username: "bear1", first_name: "Barbra", last_name: "Bear", date_of_birth: "2016-07-11 01:14:39", is_male: false, avatar: "default.png"},
+  {email: "c@c.com", encrypted_password: "$2a$11$uZ8H8a0ZdgUrO4snoqda2u/QmX1vtEeDiHW/Pd6yzF1Yh2kdfKaj.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, username: "cat1", first_name: "Catherine", last_name: "Cat", date_of_birth: "2016-07-11 01:14:39", is_male: false, avatar: "default.png"},
+  {email: "d@d.com", encrypted_password: "$2a$11$O9cOHMVqjWMXw2THEfAGCOyFC9eQtGZvhFRxqLAODq42CzI/JyH4q", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, username: "dog1", first_name: "Dylan", last_name: "Dog", date_of_birth: "2016-07-11 01:14:39", is_male: true, avatar: "default.png"},
+  {email: "e@e.com", encrypted_password: "$2a$11$l0SjKHZLLpQqWQUM4ay5VuGP/RrWKiMChV9Rb1OLir7UXS3clhL9u", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, username: "elephant1", first_name: "Elena", last_name: "Elephant", date_of_birth: "2016-07-11 01:14:39", is_male: false, avatar: "default.png"},
+  {email: "f@f.com", encrypted_password: "$2a$11$jv7M2/sdGAymqi9bPAIcxO4JYtJb1xtEzAfaQyBKj9vsWH9vGZARK", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, username: "fox1", first_name: "Frank", last_name: "Fox", date_of_birth: "2016-07-11 01:14:39", is_male: true, avatar: "default.png"}
+])
+Article.create!([
+  {title: "How Uber secretly investigated its legal foes", content: " As Uber continues to attract new lawsuits and accusations, the investigation into Schmidt and his colleagues shows just how far the company will go to defend its position, both inside and outside the courtroom. According to the ruling, Ergo's investigation was \"Raising a serious risk of perverting the process of justice before this court.\" With that ruling, what began as an antitrust case has become a parallel case about exactly how far Ergo went, and how much Uber knew about it. In a private dinner in 2014, Uber executive Emil Michael outlined a plan to spend a million dollars collecting opposition research on journalists who cover Uber unfavorably, suggesting the company could investigate \"Your personal lives, your families.\" Uber's CEO later condemned the comments, and there's no indication such a program was ever put into place. In a filing last night, Uber pushed back against the allegations of fraud, arguing its contract with Ergo had specified that the investigation be both lawful and professional, and neither Kalanick nor Uber had any idea an investigator might stray beyond that. Reached by The Verge, Uber declined to comment, as did the plaintiff's legal team.", char_count: 1200, URL: "http://www.theverge.com/2016/7/10/12127638/uber-ergo-investigation-lawsuit-fraud-travis-kalanick", private: true, user_id: 1},
+  {title: "CSCI 465 P6", content: " 10% if you present on Thursday July 7 instead of Monday July 11.Assignment SubmissionHost your assignment on your 465 server. You can either put your final assignment in your existing 465 git repository or create a new git repository and corresponding private git repository on github/bitbucket. After the semester is over, you make make your final project repository public so future employers can see it. If you create a new repository, invite me as a collaborator. Before each presentation I will clone all the github repositories.", char_count: 535, URL: "http://www.ecst.csuchico.edu/~tyson/classes/465.sum16/p6.html", private: false, user_id: 1},
+  {title: "How to remove EVERYTHING from Windows 10 you dont need", content: " When I first installed Windows 10 on my PC i felt like a lot of the pre-installed software was rather useless, and so I started my Journey to clean up my Windows and save disk-space and improve performance by remove everything i felt like I dont need. Windows 10 comes with quite a lot of \"Apps\" like the Music app, which - in my opinion - are quite bad, so I prefer to use the software of my choice here. If you want to remove those Apps, you need to open the Windows PowerShell 2.0 which should already be installed on your system. It's not really possible to directly disable those in Windows, but the nice Freeware Windows Tweaker 4 helps with that. In the \"Privacy\" tab you can disable Cortana and everything else that might try to spy on you, I disabled everything listened there and havent't had isssues with it.", char_count: 820, URL: "http://f-rilling.com/blog/how-to-remove-everything-from-windows-10-you-dont-need", private: false, user_id: 1},
+  {title: "Pokémon Go\\'s success adds $7.5 billion to Nintendo\\'s market value", content: " Nintendo's stock continues to skyrocket following the release of Pokémon Go. After an increase of 9.3 percent with the game's launch last week, the company's share price rose 24.52 percent on Monday to ¥20,260 - its highest one-day surge since 1983, adding $7.5 billion to the firm's market value. Nintendo is an investor in both Niantic and the Pokémon Company, but the app is free to download, with Nintendo's revenue generated by in-game microtransactions. According to one equity analyst, Pokémon Go will need to create around $140 million to $196 million in turnover each month to have a significant impact on Nintendo's profits. Mia Nagasaka of Morgan Stanley told CNBC that Pokémon Go is estimated to have made $3.9 million to $4.9 million on its first day of release, suggesting that the game will need to keep near the top of the app charts pretty consistently to be a signifiant earner. Bloomberg's Tim Culpan has drawn comparisons between the game's release and the launch of the Nintendo Wii in 2007, with the latter helping the company's stock price soar to heights of ¥67,600 before falling back to more normal levels two years later.", char_count: 1205, URL: "http://www.theverge.com/2016/7/11/12147600/nintendos-stock-pokemon-go", private: false, user_id: 1}
+])
+Friendship.create!([
+  {user_id: 1, friend_id: 2},
+  {user_id: 1, friend_id: 3},
+  {user_id: 1, friend_id: 4}
+])
