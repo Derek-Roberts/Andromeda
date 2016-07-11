@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+<% if @article.private == private %>
+  <% if @article.user_id == current_user.id %>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @article.title %>
+    </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
+    <p>
+      <strong>Content:</strong>
+      <%= @article.content %>
+    </p>
 
-<p>
-  <strong>Char count:</strong>
-  <%= @article.char_count %>
-</p>
+    <p>
+      <strong>Char count:</strong>
+      <%= @article.char_count %>
+    </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @article.URL %>
-</p>
+    <p>
+      <strong>URL:</strong>
+      <%= @article.URL %>
+    </p>
 
-<p>
-  <strong>Private:</strong>
-  <%= @article.private %>
-</p>
+    <p>
+      <strong>Private:</strong>
+      <%= @article.private %>
+    </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+  <% end %>
+<% else %>
+  <h1>Stop poking around here!</h1>
+<% end %>
 <%= link_to 'Back', articles_path %>

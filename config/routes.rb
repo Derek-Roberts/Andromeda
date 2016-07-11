@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :users do
     resources :friends, :shallow => true
+    resources :article_users, :shallow => true
   end
   get 'users/:id' => 'users#show'
 end

@@ -25,6 +25,9 @@
     <%= f.radio_button :private, '0', :checked => true %> <%= f.label :private, "Public" %>
     <%= f.radio_button :private, '1' %> <%= f.label :private, "Private" %>
   </div>
+  <br>
+  <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure you want to delete this article?' } %> |
+
   <div class="actions">
     <%= f.submit %>
   </div>

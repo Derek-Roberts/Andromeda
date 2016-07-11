@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article_user = @article.article_users.new
   end
 
   # GET /articles/new
@@ -27,6 +28,13 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    @response = HTTParty.get("http://api.smmry.com/&SM_API_KEY=A252EB9549&SM_LENGTH=5&SM_URL=#{@article.URL}")
+    if !@article.title.present?
+      @article.title = @response["sm_api_title"]
+    end
+    @article.content = @response["sm_api_content"]
+    @article.char_count = @response["sm_api_character_count"]
+    @article.user_id = current_user.id
 
     respond_to do |format|
       if @article.save
@@ -73,4 +81,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content, :char_count, :URL, :private, :user_id)
     end
+
 end

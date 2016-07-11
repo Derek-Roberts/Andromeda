@@ -34,17 +34,18 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-heading"><%= article.title %></h3>
+        </div>
+        <div class="panel-body">
+          <%= article.content %>
+        </div>
         <td><%= article.char_count %></td>
-        <td><%= article.URL %></td>
-        <td><%= article.private %></td>
-        <td><%= article.user_id %></td>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
   </tbody>
 </table>
