@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @users = User.all
+    @friends = current_user.friendships.map { |friend| User.find(friend.friend_id) }
   end
 
   # GET /articles/1

@@ -2,6 +2,23 @@
 
 <h1>Listing Articles</h1>
 
+<div id="friendlist">
+  <h3>Current Friends</h3>
+  <% @friends.each do |friend| %>
+    <% if !friend.new_record? %>
+      <%= link_to friend.username, user_path(friend.id) %>
+      <%= image_tag(friend.avatar, size: "50x50", alt: friend.avatar) %><br>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New Article", new_article_path %>
+
+<div id="article">
+  <h3><%= @article_title %></h3>
+  <p><%= @summary %></p>
+</div>
+
 <table>
   <thead>
     <tr>

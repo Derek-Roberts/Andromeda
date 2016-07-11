@@ -10,18 +10,11 @@
       </ul>
     </div>
   <% end %>
+  <p>Please submit a URL to an article you'd like to summarize.  By default the article's title will be picked but if you would like to enter a custom one go right ahead!</p><br>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, "Custom Title: " %><br>
     <%= f.text_area :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :char_count %><br>
-    <%= f.number_field :char_count %>
   </div>
   <div class="field">
     <%= f.label :URL %><br>
@@ -29,11 +22,8 @@
   </div>
   <div class="field">
     <%= f.label :private %><br>
-    <%= f.check_box :private %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.radio_button :private, '0', :checked => true %> <%= f.label :private, "Public" %>
+    <%= f.radio_button :private, '1' %> <%= f.label :private, "Private" %>
   </div>
   <div class="actions">
     <%= f.submit %>
