@@ -37,7 +37,7 @@
     </p>
     <p>
       <strong>URL:</strong>
-      <%= @article.URL %>
+      <%= link_to @article.URL, @article.URL %>
     </p>
     <%= link_to 'Edit', edit_article_path(@article) %> |
 <% end %>
