@@ -10,6 +10,7 @@
       </div>
     <% end %>
   <% end %>
+  <h4><%= link_to "Add New Friend", new_user_friendship_path(current_user.id) %></h4>
 </div>
 <br><br>
 <h3>Listing Articles</h3>
@@ -19,13 +20,15 @@
     Click the title above to visit the article creation page.
   </div>
 <% @articles.each do |article| %>
-  <div class="box col-md-<%= rand(3..5) %> article">
-        <h4><%= link_to article.title, article %><small> - <%= User.find(article.user_id).username  %></small></h4>
-        <%= article.content %>
+  <% if article.private == false %>
+  <div class="box col-md-4 article">
+        <h4><%= link_to article.title, article %><small> - <%= User.find(article.user_id).username  %>
         <% if article.user_id == current_user.id %>
           <%= link_to 'Edit', edit_article_path(article) %>
           <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+        <% end %></small></h4>
+        <%= article.content %>
   </div>
+  <% end %>
 <% end %>
 </div>

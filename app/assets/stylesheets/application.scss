@@ -14,7 +14,6 @@
  *= require_self
  */
 @import "bootstrap-sprockets";
-@import "bootstrap";
 @import "masonry/fluid";
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 
@@ -24,7 +23,7 @@ body {
   background-image: image-url("thegrid.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0 -40%;
+  background-position: 0 -20%;
   font-family: Roboto;
 }
 
@@ -34,9 +33,10 @@ body {
   overflow: hidden;
 }
 
-.friendlist {
+.friendlist:a{
   background:rgba(0,0,0,0.5);
   overflow: hidden;
+  color: white;
 }
 
 a {
@@ -44,6 +44,11 @@ a {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+#form {
+  background: white;
+  color: black;
 }
 
 img {
@@ -63,7 +68,7 @@ h3 {
 #main-title {
   text-align: center;
   font-size: 7em;
-  margin: 20px 0 20px 0;
+  margin: 40px 0 20px 0;
   color: #fff;
   font-family: Monoton;
   -webkit-animation: neon 1.5s ease-in-out infinite alternate;

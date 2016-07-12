@@ -15,11 +15,7 @@
     </p>
     <p>
       <strong>URL:</strong>
-      <%= @article.URL %>
-    </p>
-    <p>
-      <strong>Private:</strong>
-      <%= @article.private %>
+      <%= link_to @article.URL, @article.URL %>
     </p>
     <%= link_to 'Edit', edit_article_path(@article) %> |
   <% else %>
@@ -42,10 +38,6 @@
     <p>
       <strong>URL:</strong>
       <%= @article.URL %>
-    </p>
-    <p>
-      <strong>Private:</strong>
-      <%= @article.private %>
     </p>
     <%= link_to 'Edit', edit_article_path(@article) %> |
 <% end %>

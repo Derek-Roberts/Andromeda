@@ -1,0 +1,15 @@
+<% @friends = current_user.friendships.map { |friend| User.find(friend.friend_id) } %>
+<% @users_left = User.all - @friends%>
+
+<% @users_left.each do |user| %>
+<% if user.id != current_user.id %>
+<%= form_tag(new_user_friendship_path, method: "get") do %>
+  <%= image_tag(user.avatar, size: "40x40", alt: user.avatar) %>
+  <h4><%= link_to user.username, user_path(user.id) %></h4>
+  <%= hidden_field_tag :friend_id, user.id%>
+  <div class="actions">
+    <%= submit_tag("NewFriend") %>
+  </div>
+<% end %>
+<% end %>
+<% end %>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :articles
   resources :users do
-    resources :friends, :shallow => true
+    resources :friendships, :shallow => true
     resources :article_users, :shallow => true
   end
   get 'users/:id' => 'users#show'

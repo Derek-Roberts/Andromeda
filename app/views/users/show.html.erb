@@ -1,10 +1,20 @@
 <div id="container">
   <% if @user.id == current_user.id %>
   <h1>My Profile</h1><p><%= link_to "Edit profile", edit_user_registration_path %></p><br>
+<% @articles = Article.all %>
+<% @articles.each do |article| %>
+  <div class="box col-md-4 article">
+        <h4><%= link_to article.title, article %><small> - <%= User.find(article.user_id).username  %>
+          <%= link_to 'Edit', edit_article_path(article) %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></small></h4>
+        <%= article.content %>
+  </div>
+<% end %>
+
   <% else %>
-    <%= @user.username + "'s Profile" %>
+    <h3><%= @user.username + "'s Profile" %></h3>
   <% end %>
-  <%= image_tag(@user.avatar, size: "100x100", alt: @user.avatar) %><br>
+  <h3><%= image_tag(@user.avatar, size: "100x100", alt: @user.avatar) %></h3><br>
   <h3>First Name: <%= @user.first_name %></h3>
   <h3>Last Name: <%= @user.last_name %></h3><br>
 
